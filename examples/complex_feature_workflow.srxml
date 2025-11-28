@@ -1,0 +1,26 @@
+<workflow id="complex.feature.flow" name="Feature Implementation Cycle" xmlns="https://sros.sros/schema/workflow">
+    <identity>
+        <system_name>SROS Dev Loop</system_name>
+        <purpose>Simulate a full feature implementation cycle</purpose>
+    </identity>
+
+    <context>
+        <item>Project: SROS v1</item>
+        <item>Feature: Add Redis Memory Store</item>
+    </context>
+
+    <step id="step1" order="1">
+        <agent>architect</agent>
+        <instruction>Analyze the requirements for adding a Redis-backed memory store to SROS. Consider connection pooling and serialization.</instruction>
+    </step>
+
+    <step id="step2" order="2">
+        <agent>builder</agent>
+        <instruction>Implement the RedisMemoryStore class based on the analysis. Include methods for get, set, and delete.</instruction>
+    </step>
+
+    <step id="step3" order="3">
+        <agent>tester</agent>
+        <instruction>Generate pytest unit tests for the RedisMemoryStore implementation, covering connection failures and serialization errors.</instruction>
+    </step>
+</workflow>

@@ -1,0 +1,8 @@
+<workflow id="test.workflow.1" name="Test Workflow">
+    <step id="step1" agent="agent.test">
+        <input>Hello SROS</input>
+    </step>
+    <step id="step2" agent="agent.test">
+        <input>Step 2 Input</input>
+    </step>
+</workflow>

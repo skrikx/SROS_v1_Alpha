@@ -1,0 +1,49 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://srx.sros/schema/v1"
+           xmlns="https://srx.sros/schema/v1"
+           elementFormDefault="qualified">
+
+    <xs:include schemaLocation="base_srxml_schema.xml"/>
+
+    <xs:element name="srx_agent_prompt">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="srx_root">
+                    <xs:sequence>
+                        <xs:element name="identity">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="system_name" type="xs:string"/>
+                                    <xs:element name="purpose" type="xs:string"/>
+                                    <xs:element name="seed" minOccurs="0">
+                                        <xs:complexType>
+                                            <xs:attribute name="value" type="xs:string" use="required"/>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="inputs" minOccurs="0">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="item" type="xs:string" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="high_level_model" minOccurs="0">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="role" type="xs:string" use="required"/>
+                    <xs:attribute name="mode" type="xs:string" use="required"/>
+                    <xs:attribute name="one_pass_lock" type="xs:boolean" default="false"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

@@ -1,0 +1,4 @@
+[
+    {"id": "mem1", "content": "Seeded memory 1", "layer": "short"},
+    {"id": "mem2", "content": "Seeded memory 2", "layer": "long"}
+]

@@ -1,0 +1,30 @@
+[project]
+name = "sros"
+version = "1.0.0"
+description = "SROS v1: Sovereign Runtime Operating System"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pyyaml",
+    "pydantic>=2.0",
+    "rich",
+    "aiohttp",
+    "fastapi",
+    "uvicorn",
+    "typer",
+    "numpy",
+    "chromadb",  # For vector memory
+    "jinja2",    # For templating
+]
+
+[project.scripts]
+sros = "sros.nexus.cli.main:main"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test* !TesterAgent"

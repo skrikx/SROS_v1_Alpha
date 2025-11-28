@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://srx.sros/schema/v1"
+           xmlns="https://srx.sros/schema/v1"
+           elementFormDefault="qualified">
+
+    <xs:include schemaLocation="base_srxml_schema.xml"/>
+
+    <xs:element name="governance_policy">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="srx_root">
+                    <xs:sequence>
+                        <xs:element name="name" type="xs:string"/>
+                        <xs:element name="description" type="xs:string"/>
+                        <xs:element name="scope">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="tenants" minOccurs="0">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="tenant" type="xs:string" maxOccurs="unbounded"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="agents" minOccurs="0">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="agent" type="xs:string" maxOccurs="unbounded"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="resources" minOccurs="0">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="resource" type="xs:string" maxOccurs="unbounded"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="rules">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="rule" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="effect" type="xs:string"/>
+                                                <xs:element name="condition" type="xs:string"/>
+                                                <xs:element name="actions">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="action" type="xs:string" maxOccurs="unbounded"/>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                            </xs:sequence>
+                                            <xs:attribute name="id" type="xs:string" use="required"/>
+                                            <xs:attribute name="priority" type="xs:integer" default="100"/>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="enforcement_mode" type="xs:string" default="strict"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

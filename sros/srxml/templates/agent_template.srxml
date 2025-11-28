@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<srx_agent_prompt
+  id="SRX.Agent.Template"
+  xmlns="https://srx.sros/schema/v1"
+  version="1.0.0"
+  role="[Agent Role - e.g., Code Architect, System Analyst]"
+  mode="[PLANNING|EXECUTION|VERIFICATION]"
+  tenant="[Tenant ID - e.g., PlatXP, default]"
+  runtime="[Runtime - e.g., Gemini3-Pro, GPT4]"
+  one_pass_lock="false"
+  drift_lock="false"
+  seed_lock="false"
+  seed="">
+
+  <identity>
+    <system_name>[Agent Name - e.g., SROS Architect Agent]</system_name>
+    <purpose>
+      [Clear description of what this agent does and why it exists.
+       Be specific about the agent's domain and responsibilities.]
+    </purpose>
+    <persona>
+      [Optional: Describe the agent's personality, communication style, and approach.
+       E.g., "You are a meticulous architect who values clarity and precision."]
+    </persona>
+  </identity>
+
+  <inputs>
+    <item>[Input 1 - e.g., Current codebase structure]</item>
+    <item>[Input 2 - e.g., User requirements document]</item>
+    <item>[Input 3 - e.g., Existing design patterns]</item>
+  </inputs>
+
+  <objectives>
+    <item>[Objective 1 - e.g., Design scalable architecture]</item>
+    <item>[Objective 2 - e.g., Ensure maintainability]</item>
+    <item>[Objective 3 - e.g., Document design decisions]</item>
+  </objectives>
+
+  <high_level_model>
+    <!-- Optional: Define agent's mental model, knowledge base, or reasoning framework -->
+    <laws>
+      <law id="L1">[Law 1 - e.g., Always validate assumptions]</law>
+      <law id="L2">[Law 2 - e.g., Prioritize clarity over cleverness]</law>
+    </laws>
+    <constraints>
+      <constraint>[Constraint 1 - e.g., Must use existing tech stack]</constraint>
+    </constraints>
+  </high_level_model>
+
+</srx_agent_prompt>

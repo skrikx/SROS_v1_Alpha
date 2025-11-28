@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sr8_workflow
+  id="SR8.Workflow.Template"
+  xmlns="https://sr8.sros/schema/v1"
+  version="1.0.0"
+  role="[Workflow Role - e.g., System Builder, Test Orchestrator]"
+  mode="[Apex|Standard|Minimal]"
+  tenant="[Tenant ID]"
+  runtime="[Runtime]"
+  one_pass_lock="false"
+  drift_lock="false"
+  seed_lock="false"
+  seed="">
+
+  <identity>
+    <system_name>[Workflow Name - e.g., SR8 - Component Builder]</system_name>
+    <purpose>
+      [Clear description of what this workflow accomplishes.
+       Define the problem it solves and the value it delivers.]
+    </purpose>
+  </identity>
+
+  <context>
+    <item>[Context 1 - e.g., This workflow operates on SROS v1 codebase]</item>
+    <item>[Context 2 - e.g., Requires access to git repository]</item>
+    <item>[Context 3 - e.g., Must respect existing architecture]</item>
+  </context>
+
+  <inputs>
+    <item>[Input 1 - e.g., Blueprint document]</item>
+    <item>[Input 2 - e.g., Existing module structure]</item>
+  </inputs>
+
+  <objectives>
+    <item>[Objective 1 - e.g., Create production-ready components]</item>
+    <item>[Objective 2 - e.g., Ensure test coverage]</item>
+    <item>[Objective 3 - e.g., Document all changes]</item>
+  </objectives>
+
+  <workflow>
+    <step order="1" id="step_1">
+      [Step 1 instruction - e.g., Analyze existing codebase structure]
+    </step>
+    <step order="2" id="step_2">
+      [Step 2 instruction - e.g., Design component interfaces]
+    </step>
+    <step order="3" id="step_3">
+      [Step 3 instruction - e.g., Implement core functionality]
+    </step>
+    <step order="4" id="step_4">
+      [Step 4 instruction - e.g., Write comprehensive tests]
+    </step>
+    <step order="5" id="step_5">
+      [Step 5 instruction - e.g., Create documentation]
+    </step>
+  </workflow>
+
+  <checks>
+    <item>[Check 1 - e.g., All tests must pass]</item>
+    <item>[Check 2 - e.g., Code must follow style guide]</item>
+    <item>[Check 3 - e.g., Documentation must be complete]</item>
+  </checks>
+
+  <output_contract>
+    <item>[Output 1 - e.g., Fully implemented component modules]</item>
+    <item>[Output 2 - e.g., Test suite with 90%+ coverage]</item>
+    <item>[Output 3 - e.g., API documentation]</item>
+  </output_contract>
+
+</sr8_workflow>

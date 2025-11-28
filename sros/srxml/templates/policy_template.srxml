@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<governance_policy
+  id="GOV.Policy.Template"
+  xmlns="https://srx.sros/schema/v1"
+  version="1.0.0"
+  tenant="[Tenant ID]">
+
+  <name>[Policy Name - e.g., Model Usage Limits]</name>
+  <description>
+    [Clear description of what this policy enforces and why.
+     Include business rationale and compliance requirements.]
+  </description>
+
+  <scope>
+    <tenants>
+      <tenant>[Tenant 1 - e.g., PlatXP]</tenant>
+      <tenant>[Tenant 2 - e.g., default]</tenant>
+    </tenants>
+    <agents>
+      <agent>[Agent pattern - e.g., SRX.*]</agent>
+    </agents>
+    <resources>
+      <resource>[Resource pattern - e.g., models/gemini/*]</resource>
+    </resources>
+  </scope>
+
+  <rules>
+    <rule id="rule_1" priority="100">
+      <effect>allow</effect>
+      <condition>[Condition - e.g., token_count &lt; 10000]</condition>
+      <actions>
+        <action>[Action - e.g., log_usage]</action>
+      </actions>
+    </rule>
+    <rule id="rule_2" priority="200">
+      <effect>deny</effect>
+      <condition>[Condition - e.g., cost_estimate &gt; 100]</condition>
+      <actions>
+        <action>[Action - e.g., alert_admin]</action>
+        <action>[Action - e.g., block_request]</action>
+      </actions>
+    </rule>
+    <rule id="rule_3" priority="150">
+      <effect>modify</effect>
+      <condition>[Condition - e.g., sensitive_data_detected]</condition>
+      <actions>
+        <action>[Action - e.g., redact_pii]</action>
+        <action>[Action - e.g., log_security_event]</action>
+      </actions>
+    </rule>
+  </rules>
+
+  <enforcement_mode>strict</enforcement_mode>
+  <!-- Options: strict, permissive, audit -->
+
+</governance_policy>

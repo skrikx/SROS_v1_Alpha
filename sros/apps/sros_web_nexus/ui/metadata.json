@@ -1,0 +1,8 @@
+{
+  "name": "SROS Omni Nexus",
+  "description": "A sovereign-grade command center featuring a dynamic module registry, generic simulation engine, and mythic UI aesthetics.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}

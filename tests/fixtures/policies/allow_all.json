@@ -1,0 +1,5 @@
+{
+    "id": "policy.allow_all",
+    "effect": "allow",
+    "condition": "true"
+}

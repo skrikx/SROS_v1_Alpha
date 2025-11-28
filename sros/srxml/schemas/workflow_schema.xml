@@ -1,0 +1,73 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://srx.sros/schema/v1"
+           xmlns="https://srx.sros/schema/v1"
+           elementFormDefault="qualified">
+
+    <xs:include schemaLocation="base_srxml_schema.xml"/>
+
+    <xs:element name="sr8_workflow">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="srx_root">
+                    <xs:sequence>
+                        <xs:element name="identity">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="system_name" type="xs:string"/>
+                                    <xs:element name="purpose" type="xs:string"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="context" minOccurs="0">
+                             <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="item" type="xs:string" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="objectives">
+                             <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="item" type="xs:string" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="workflow">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="step" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:simpleContent>
+                                                <xs:extension base="xs:string">
+                                                    <xs:attribute name="order" type="xs:integer" use="required"/>
+                                                    <xs:attribute name="id" type="xs:string" use="required"/>
+                                                </xs:extension>
+                                            </xs:simpleContent>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="checks" minOccurs="0">
+                             <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="item" type="xs:string" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="output_contract" minOccurs="0">
+                             <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="item" type="xs:string" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="role" type="xs:string" use="required"/>
+                    <xs:attribute name="mode" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

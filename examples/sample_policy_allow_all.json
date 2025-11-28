@@ -1,0 +1,11 @@
+{
+    "policy_id": "allow_all",
+    "description": "Default policy that allows all agents and operations. Use this for development only.",
+    "rules": [
+        {
+            "effect": "allow",
+            "action": "*",
+            "resource": "*"
+        }
+    ]
+}

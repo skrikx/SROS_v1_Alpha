@@ -1,0 +1,12 @@
+<workflow id="hello_world" xmlns="https://sros.sros/schema/workflow">
+  <!-- 
+    This is a minimal example workflow for SROS.
+    It defines a single task to be executed by the SR9 Orchestrator agent.
+  -->
+  <task id="task_1">
+    <agent>sr9_orchestrator</agent>
+    <input>
+      <prompt>What is the capital of France?</prompt>
+    </input>
+  </task>
+</workflow>
